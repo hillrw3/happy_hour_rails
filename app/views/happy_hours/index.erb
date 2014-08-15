@@ -1,0 +1,13 @@
+<% if session[:user] == nil %>
+  <div id="to_register">
+    <a  id="register_link" href="/registration">Not a member? Register here!</a>
+  </div>
+<% end %>
+
+<h1 class="title">Hour Hound</h1>
+
+<div id='map'></div>
+<script id="map_script">
+  var map = L.mapbox.map('map', 'hillrw3.j0aknjmb')
+    .addControl(L.mapbox.geocoderControl('examples.map-i875kd35'));
+</script>
