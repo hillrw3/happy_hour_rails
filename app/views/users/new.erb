@@ -1,0 +1,15 @@
+<h1 class="title">Register</h1>
+
+<div class=errors><%= flash[:error] if flash[:error] %></div>
+
+<%= form_for User.new do |f| %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br><br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br><br>
+  <%= f.submit "Sign in!" %>
+
+<% end %>

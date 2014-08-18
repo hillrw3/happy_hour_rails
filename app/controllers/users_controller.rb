@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
-  def signin
+  def new
     @user = User.new
   end
+
 end

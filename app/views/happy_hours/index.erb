@@ -1,10 +1,13 @@
 <% if session[:user] == nil %>
   <div id="to_register">
-    <a  id="register_link" href="/registration">Not a member? Register here!</a>
+    <!--<a  id="register_link" href="/registration">Not a member? Register here!</a>-->
+    <%= link_to "Not a member? Register here!", new_user_path, id: 'register_link' %>
   </div>
 <% end %>
 
 <h1 class="title">Hour Hound</h1>
+
+<div id='green'><%= flash[:notice] if flash[:notice] %></div>
 
 <div id='map'></div>
 <script id="map_script">

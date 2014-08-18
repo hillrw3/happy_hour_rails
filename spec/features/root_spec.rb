@@ -2,11 +2,9 @@ require "rails_helper"
 require 'capybara/rails'
 
 feature "Welcome page" do
-  scenario "homepage should contain greeting and have button to map" do
+  scenario "homepage should contain greeting" do
     visit '/'
-    expect(page).to have_content("Happy Hour Finder")
-    click_button "Get me there"
-    expect(page).to have_content("Nearest Happy Hours")
+    expect(page).to have_content("Hour Hound")
   end
 
   scenario "click link and register" do
@@ -24,9 +22,9 @@ feature "Welcome page" do
     visit '/'
     click_link "Log In"
     expect(page).to have_content("Sign on in!")
-    fill_in 'Username:', with: 'rob'
-    fill_in 'Password:', with: '123'
-    click_button "Let's get wild!"
+    fill_in 'Username', with: 'rob'
+    fill_in 'Password', with: '123'
+    click_button "Sign in!"
     expect(page).to have_content("Hello again, rob!")
   end
 

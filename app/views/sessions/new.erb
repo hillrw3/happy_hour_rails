@@ -1,0 +1,16 @@
+<h1 class="title">Sign on in!</h1>
+
+<div class=errors><%= flash[:error] if flash[:error] %></div>
+
+<%= form_for User.new, url: sessions_path do |f| %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br><br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br><br>
+  <%= f.submit "Sign in!" %>
+
+<% end %>
+

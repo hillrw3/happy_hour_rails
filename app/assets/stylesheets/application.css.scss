@@ -1,3 +1,7 @@
+@import 'bourbon';
+@import 'neat';
+@import 'base/base';
+
 * {
     font-family: Arial;
 }
@@ -82,5 +86,9 @@ a:link, a:visited {
 a:hover, a:active {
     background-color: white;
     color: steelblue;
+}
+
+.errors {
+    color: red;
 }
 
