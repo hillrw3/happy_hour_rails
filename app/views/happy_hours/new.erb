@@ -1,0 +1,21 @@
+<h1 class="title">Add a location!</h1>
+
+<div class='errors flash'><%= flash[:error] if flash[:error] %></div>
+
+<%= form_for @happy_hour, url: happy_hours_path do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  <br>
+  <%= f.label :street_address %>
+  <%= f.text_field :street_address %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <br>
+  <%= f.submit %>
+
+<% end %>

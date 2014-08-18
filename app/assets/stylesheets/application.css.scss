@@ -5,6 +5,7 @@
 body {
   background: (url('http://images.fineartamerica.com/images-medium-large/mile-high-skyline-kevin-munro.jpg'));
   background-size: 100%;
+  color: white;
 
   #wrapper {
     width: 50%;
@@ -110,6 +111,10 @@ body {
   #add-location {
     float: right;
     margin-top: -5%;
+  }
+
+  label {
+    background: steelblue;
   }
 
 }
