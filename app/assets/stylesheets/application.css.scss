@@ -2,76 +2,74 @@
 @import 'neat';
 @import 'base/base';
 
-* {
-    font-family: Arial;
-}
+body {
+  background: (url('http://images.fineartamerica.com/images-medium-large/mile-high-skyline-kevin-munro.jpg'));
+  background-size: 100%;
 
-#wrapper {
+  #wrapper {
     width: 50%;
     height: 100%;
     margin: auto;
-}
+  }
 
 
-#map { position:absolute;
+  #map { position:absolute;
     height:80%;
     width:50%;
     margin:auto;
-}
+  }
 
-.title {
+  .title {
     text-align: center;
     margin-top: 5%;
     clear: both;
-}
+    color: white;
+  }
 
-#to_map {
-    width: 100%;
-    height: 15%;
-    border-radius: 2px;
-    margin-top: 10%;
-    font-size: 1.4em;
-}
-
-#map_script {
+  #map_script {
     margin: auto;
-}
+  }
 
-#nav_bar {
+  #map {
+    display: inline-block;
+    clear: both;
+  }
+
+  #nav_bar {
     width: 100%;
     text-align: center;
     background-color: steelblue;
     padding: 3px 0 3px 0;
-}
+  }
 
-.nav_buttons {
+  .nav_buttons {
     margin-left: 3%;
     margin-right: 3%;
     display: inline-block;
 
-}
+  }
 
-#to_register {
+  #to_register {
     float: right;
     display: inline;
     margin-right: -35%;
     margin-top: 8px;
-}
+  }
 
-#register_link {
+  #register_link {
     background-color: white;
     color: palevioletred;
-}
+  }
 
-dl {
+  dl {
     margin: 0;
-}
+  }
 
-#red {color: red;}
+  #red {color: red;}
 
-#green {color: limegreen;}
+  #green {color: limegreen;}
 
-a:link, a:visited {
+  a:link, a:visited {
     display: inline;
     width: 120px;
     color: #FFFFFF;
@@ -81,14 +79,38 @@ a:link, a:visited {
     text-decoration: none;
     text-transform: uppercase;
     font-size: .8em;
-}
+  }
 
-a:hover, a:active {
+  a:hover, a:active {
     background-color: white;
     color: steelblue;
-}
+  }
 
-.errors {
+  .errors {
     color: red;
+  }
+
+  .red-border {
+    border: 1px solid red;
+  }
+
+  .leaflet-control-zoom-in {
+    padding-left: 15px !important;
+    padding-right: 15px;
+  }
+
+  .leaflet-control-zoom-out {
+    padding-left: 15px !important;
+  }
+
+  .leaflet-control-mapbox-geocoder-toggle {
+    padding-left: 15px !important;
+  }
+
+  #add-location {
+    float: right;
+    margin-top: -5%;
+  }
+
 }
 

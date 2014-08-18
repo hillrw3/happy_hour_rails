@@ -8,6 +8,29 @@
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+  <script>  L.mapbox.featureLayer({
+    // this feature is in the GeoJSON format: see geojson.org
+    // for the full specification
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      // coordinates here are in longitude, latitude order because
+      // x, y is the standard for GeoJSON and many formats
+      coordinates: [
+        -104.979528,
+        39.736754
+      ]
+    },
+    properties: {
+      title: 'Beauty Bar',
+      description: '1718 14th St NW, Washington, DC',
+      // one can customize markers by adding simplestyle properties
+      // https://www.mapbox.com/foundations/an-open-platform/#simplestyle
+      'marker-size': 'large',
+      'marker-color': '#BE9A6B',
+      'marker-symbol': 'cafe'
+    }
+  }).addTo(map);</script>
 </head>
 <body>
 
@@ -15,7 +38,7 @@
   <a class="nav_buttons" href="/categories">Categories</a>
   <a class="nav_buttons" href="/favorites">Favorites</a>
   <a class="nav_buttons" href="/placeholder">Placeholder</a>
-  <% if session[:user] == nil %>
+  <% if session[:user_id] == nil %>
     <%= link_to "Log In", signin_path, class: 'nav_buttons', id: 'signin'  %>
   <% else %>
     <%= link_to "Log Out", signout_path, class: 'nav_buttons'  %>
