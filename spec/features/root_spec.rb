@@ -2,26 +2,30 @@ require "rails_helper"
 require 'capybara/rails'
 
 feature "Welcome page" do
+
+  def register
+    visit '/'
+    click_link "Not a member? Register here!"
+    fill_in 'Username', with: 'rob'
+    fill_in 'Email', with: 'rob@example.com'
+    fill_in 'Password', with: '123'
+    click_button "Register!"
+  end
+
   scenario "homepage should contain greeting" do
     visit '/'
     expect(page).to have_content("Hour Hound")
   end
 
   scenario "click link and register" do
-    visit '/'
-    click_link "Not a member? Register here!"
-    fill_in 'Username:', with: 'rob'
-    fill_in 'Email:', with: 'rob@example.com'
-    fill_in 'Password:', with: '123'
-    fill_in 'Please re-enter your password:', with: '123'
-    click_button "Let's get wild!"
-    expect(page).to have_content("Thanks for registering!")
+    register
+    expect(page).to have_content("Thanks for registering, rob")
   end
 
   scenario "sign in to website" do
+    User.create!(username: "rob", email: "rob@rob.com", password: "123")
     visit '/'
-    click_link "Log In"
-    expect(page).to have_content("Sign on in!")
+    click_on "Log In"
     fill_in 'Username', with: 'rob'
     fill_in 'Password', with: '123'
     click_button "Sign in!"

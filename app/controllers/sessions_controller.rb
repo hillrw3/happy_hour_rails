@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      flash[:notice] = "Hello again, #{@user.username}"
+      flash[:notice] = "Hello again, #{@user.username}!"
       redirect_to root_path
     else
       flash[:error] = "Username/password is invalid"

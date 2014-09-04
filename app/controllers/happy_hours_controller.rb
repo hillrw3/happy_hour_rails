@@ -8,4 +8,8 @@ class HappyHoursController < ApplicationController
     @happy_hour = Location.new
   end
 
+  def create
+
+  end
+
 end

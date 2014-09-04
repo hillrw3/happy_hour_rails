@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :happy_hours
   resources :sessions
   resources :users
+  resources :categories
 end
