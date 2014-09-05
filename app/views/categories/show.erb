@@ -1,0 +1,10 @@
+<br/>
+<div class="box">
+<h2>So you're looking for some <%= @category.category.downcase %>?</h2>
+
+  <ul>
+    <% @category.locations.each do |location| %>
+      <li><%= location.name %></li>
+    <% end %>
+  </ul>
+</div>
