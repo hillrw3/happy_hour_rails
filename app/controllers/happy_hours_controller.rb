@@ -9,7 +9,7 @@ class HappyHoursController < ApplicationController
   end
 
   def create
-
+    
   end
 
 end

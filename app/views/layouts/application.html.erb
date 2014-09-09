@@ -43,7 +43,6 @@
   <%= link_to "Home", root_path, class: 'nav_buttons' %>
   <a class="nav_buttons" href="/categories">Categories</a>
   <a class="nav_buttons" href="/favorites">Favorites</a>
-  <a class="nav_buttons" href="/placeholder">Placeholder</a>
   <% if session[:user_id] == nil %>
     <%= link_to "Log In", signin_path, class: 'nav_buttons', id: 'signin' %>
   <% else %>
