@@ -1,3 +1,4 @@
+
 <% if session[:user_id] == nil %>
   <div id="to_register">
     <%= link_to "Not a member? Register here!", new_user_path, id: 'register_link' %>
@@ -7,11 +8,11 @@
 <h1 class="title">Hour Hound</h1>
 
 <div id='green flash'><%= flash[:notice] if flash[:notice] %></div>
-<div id="add-location"><%= link_to "+ Add location",new_happy_hour_path %></div>
+<div id="add-location"><%= link_to "+ Add location", new_happy_hour_path %></div>
 
 <div id='map'></div>
 <script id="map_script">
-  var map = L.mapbox.map('map', 'hillrw3.j0aknjmb')
+  var map = L.mapbox.map('map', 'hillrw3.jdnc3dda')
     .addControl(L.mapbox.geocoderControl('examples.map-i875kd35'));
 </script>
 x
