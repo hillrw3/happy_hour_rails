@@ -4,44 +4,21 @@
   <title>Hour Hound</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
   <%= csrf_meta_tags %>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
   <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet'/>
-  <script>
-    $(document).ready(function () {
-      <% Location.all.each do |location| %>
-      L.mapbox.featureLayer({
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          // coordinates here are in longitude, latitude order
-          coordinates: [
-            <%= location.longitude.to_f %>,
-            <%= location.latitude.to_f %>
-          ]
-        },
-        properties: {
-          title: "<%= location.name %>",
-          description: '',
-          'marker-size': 'large',
-          'marker-color': '#4682b4',
-          'marker-symbol': 'bar'
-        }
-      }).addTo(map);
-      <% end %>
-    });
-  </script>
 </head>
 <body>
 
 <div id="nav_bar">
   <%= link_to "Home", root_path, class: 'nav_buttons' %>
   <a class="nav_buttons" href="/categories">Categories</a>
-  <a class="nav_buttons" href="/favorites">Favorites</a>
   <% if session[:user_id] == nil %>
     <%= link_to "Log In", signin_path, class: 'nav_buttons', id: 'signin' %>
   <% else %>
+    <a class="nav_buttons" href="/favorites">Favorites</a>
     <%= link_to "Log Out", signout_path, class: 'nav_buttons' %>
   <% end %>
 </div>

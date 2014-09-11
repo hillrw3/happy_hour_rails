@@ -1,7 +1,11 @@
 class HappyHoursController < ApplicationController
 
   def index
+    @happy_hours = Location.all
+  end
 
+  def show
+    @happy_hour = Location.find(params[:id])
   end
 
   def new
@@ -13,6 +17,7 @@ class HappyHoursController < ApplicationController
                                address: params[:location][:address],
                                latitude: geocode_address(params[:location][:address])["lat"],
                                longitude: geocode_address(params[:location][:address])["lng"],
+                               description: params[:location][:description],
                                phone: params[:location][:phone]
     )
 

@@ -4,7 +4,7 @@
 
   <ul>
     <% @category.locations.each do |location| %>
-      <li><%= location.name %></li>
+      <li><%= link_to location.name, happy_hour_path(id: location.id) %></li>
     <% end %>
   </ul>
 </div>
