@@ -6,6 +6,8 @@
 @import 'neat';
 @import 'base/base';
 
+$opaque-gray: rgba(168, 173,179,0.7);
+
 body {
   background: (url('http://images.fineartamerica.com/images-medium-large/mile-high-skyline-kevin-munro.jpg'));
   background-size: 100%;
@@ -141,14 +143,18 @@ form label {
   border-radius: 5%;
 }
 
-.flash {
+#flash {
   display: inline-block;
   background-color: steelblue;
 }
 
 .opaque-box {
-  background-color: rgba(168, 173,179,0.8);
+  background-color: $opaque-gray;
   border-radius: 8px;
-  padding: 4%;
+  padding: 2%;
+}
+
+li a {
+  &:hover { display: block;}
 }
 

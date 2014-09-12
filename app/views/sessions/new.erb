@@ -1,16 +1,20 @@
 <h1 class="title">Sign on in!</h1>
+<div id="to_register">
+  <%= link_to "Not a member? Register here!", new_user_path, id: 'register_link' %>
+</div>
 
 <div class='errors flash'><%= flash[:error] if flash[:error] %></div>
 
-<%= form_for User.new, url: sessions_path do |f| %>
+<div class="opaque-box">
+  <%= form_for User.new, url: sessions_path do |f| %>
 
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
-  <%= f.submit "Sign in!" %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.submit "Sign in!" %>
 
-<% end %>
-
+  <% end %>
+</div>
