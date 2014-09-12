@@ -4,4 +4,5 @@
 <h6><%= @happy_hour.address %></h6>
   <br/>
 <p><%= @happy_hour.description %></p>
-</div>1
+  <%= link_to "Edit #{@happy_hour.name}", edit_happy_hour_path(id: @happy_hour.id) %>
+</div>

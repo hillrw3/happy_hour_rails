@@ -94,6 +94,8 @@ body {
   .errors {
     color: red;
     background-color: white;
+    padding-left: 2%;
+    border-radius: 5px;
   }
 
   .red-border {
@@ -130,6 +132,7 @@ body {
 
   * {
     padding-left: 2%;
+    padding-bottom: 2%;
   }
 }
 
@@ -139,6 +142,13 @@ form label {
 }
 
 .flash {
+  display: inline-block;
   background-color: steelblue;
+}
+
+.opaque-box {
+  background-color: rgba(168, 173,179,0.8);
+  border-radius: 8px;
+  padding: 4%;
 }
 

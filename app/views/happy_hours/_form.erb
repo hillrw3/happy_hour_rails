@@ -1,0 +1,29 @@
+<% if @happy_hour.errors.present? %>
+  <div class='errors'>
+    <% @happy_hour.errors.full_messages.each do |error| %>
+      <%= error %>
+    <% end %>
+  </div>
+<% end %>
+<br/>
+<div class="opaque-box">
+  <%= form_for @happy_hour, url: happy_hours_path do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+    <br>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <br/>
+    <%= f.label :description, "Happy Hour Info" %>
+    <%= f.text_area :description %>
+
+    <%= f.time_select :description, {ampm: true} %>
+    <br>
+    <%= f.submit %>
+
+  <% end %>
+</div>
