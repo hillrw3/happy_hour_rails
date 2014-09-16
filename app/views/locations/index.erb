@@ -8,7 +8,7 @@
 <h1 class="title">Hour Hound</h1>
 
 <div id='green flash'><%= flash[:notice] if flash[:notice] %></div>
-<div id="add-location"><%= link_to "+ Add location", new_happy_hour_path %></div>
+<div id="add-location"><%= link_to "+ Add location", new_location_path %></div>
 
 <div id='map'></div>
 <script id="map_script">
@@ -16,7 +16,7 @@
     .addControl(L.mapbox.geocoderControl('examples.map-i875kd35'));
 
   $(document).ready(function () {
-    <% @happy_hours.each do |location| %>
+    <% @locations.each do |location| %>
     L.mapbox.featureLayer({
       type: 'Feature',
       geometry: {

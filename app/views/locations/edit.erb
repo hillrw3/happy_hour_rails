@@ -1,13 +1,16 @@
-<% if @happy_hour.errors.present? %>
+<h1 class="title">Edit <%= @location.name %>!</h1>
+
+<% if @location.errors.present? %>
   <div class='errors'>
-    <% @happy_hour.errors.full_messages.each do |error| %>
+    <% @location.errors.full_messages.each do |error| %>
       <%= error %>
     <% end %>
-    <br/>
   </div>
 <% end %>
+
 <div class="opaque-box">
-  <%= form_for @happy_hour, url: happy_hours_path do |f| %>
+
+  <%= form_for @location, url: location_path(id: @location.id) do |f| %>
 
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -21,4 +24,5 @@
     <%= f.submit %>
 
   <% end %>
+
 </div>
