@@ -91,6 +91,9 @@ body {
   a:hover, a:active {
     background-color: white;
     color: steelblue;
+//    padding-left: 5vw;
+//    padding-right: 5vw;
+    padding: 1.5%;
   }
 
   .errors {
@@ -155,6 +158,10 @@ form label {
 }
 
 li a {
-  &:hover { display: block;}
+//  &:hover { display: block;}
+}
+
+.centered-text {
+  text-align: center;
 }
 

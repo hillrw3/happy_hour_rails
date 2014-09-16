@@ -14,7 +14,8 @@
 
 <div id="nav_bar">
   <%= link_to "Home", root_path, class: 'nav_buttons' %>
-  <a class="nav_buttons" href="/categories">Categories</a>
+  <%= link_to "All locations", all_locations_path, class: 'nav_buttons' %>
+  <%= link_to "Categories", categories_path, class: 'nav_buttons' %>
   <% if session[:user_id] == nil %>
     <%= link_to "Log In", signin_path, class: 'nav_buttons', id: 'signin' %>
   <% else %>

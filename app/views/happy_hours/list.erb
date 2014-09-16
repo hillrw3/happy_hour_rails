@@ -1,0 +1,10 @@
+<h2 class="title">All Locations</h2>
+<div class="box">
+<ul class="centered-text">
+  <br/>
+  <% @happy_hours.each do |location| %>
+    <li><%= link_to location.name, happy_hour_path(id: location.id) %></li>
+    <br/>
+  <% end %>
+</ul>
+</div>

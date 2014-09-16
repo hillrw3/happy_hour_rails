@@ -4,6 +4,10 @@ class HappyHoursController < ApplicationController
     @happy_hours = Location.all
   end
 
+  def list
+    @happy_hours = Location.order(:name)
+  end
+
   def show
     @happy_hour = Location.find(params[:id])
   end

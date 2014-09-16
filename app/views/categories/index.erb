@@ -1,9 +1,10 @@
 <br/>
+<h1 class="centered-text">Categories</h1>
 <div class="box">
-<h1>Categories</h1>
 
 
-  <ul>
+
+  <ul class="centered-text">
     <% @categories.each do |category| %>
       <li><%= link_to category.category, category_path(id: category.id) %></li>
     <% end %>
