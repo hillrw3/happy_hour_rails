@@ -1,8 +1,12 @@
 <br/>
 <div class="box">
-<h2><%= @location.name %></h2>
-<h6><%= @location.address %></h6>
+  <h2><%= @location.name %></h2>
+  <h6><%= @location.address %></h6>
   <br/>
-<p><%= @location.description %></p>
-  <%= link_to "Edit #{@location.name}", edit_location_path(@location) %>
+
+  <p><%= @location.website %></p>
+  <p><%= @location.phone %></p>
+  <% if session[:user_id] %>
+    <%= link_to "Edit #{@location.name}", edit_location_path(@location) %>
+  <% end %>
 </div>

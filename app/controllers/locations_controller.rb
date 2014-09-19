@@ -26,7 +26,7 @@ class LocationsController < ApplicationController
                                  address: params[:location][:address],
                                  latitude: geocode_address(params[:location][:address])["lat"],
                                  longitude: geocode_address(params[:location][:address])["lng"],
-                                 description: params[:location][:description],
+                                 website: params[:location][:website],
                                  phone: params[:location][:phone]
       )
       if @location.save
@@ -48,11 +48,11 @@ class LocationsController < ApplicationController
                        address: params[:location][:address],
                        latitude: geocode_address(params[:location][:address])["lat"],
                        longitude: geocode_address(params[:location][:address])["lng"],
-                       description: params[:location][:description],
+                       website: params[:location][:website],
                        phone: params[:location][:phone]
     )
     flash[:notice] = "#{@location.name} was successfully updated!"
-    redirect_to root_path
+    redirect_to location_path(@location)
   end
 
 

@@ -3,22 +3,13 @@ require 'capybara/rails'
 
 feature "Welcome page" do
 
-  def register
-    visit '/'
-    click_link "Not a member? Register here!"
-    fill_in 'Username', with: 'rob'
-    fill_in 'Email', with: 'rob@example.com'
-    fill_in 'Password', with: '123'
-    click_button "Register!"
-  end
-
   scenario "homepage should contain greeting" do
     visit '/'
     expect(page).to have_content("Hour Hound")
   end
 
   scenario "click link and register" do
-    register
+    login
     expect(page).to have_content("Thanks for registering, rob")
   end
 
