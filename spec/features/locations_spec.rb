@@ -41,4 +41,5 @@ feature "Locations" do
     expect(page).to have_content "123 Fun St"
     expect(page).to have_no_content "Edit Pub on Penn"
   end
+
 end

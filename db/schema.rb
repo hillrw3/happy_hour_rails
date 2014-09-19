@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919160642) do
+ActiveRecord::Schema.define(version: 20140919170216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,15 +37,16 @@ ActiveRecord::Schema.define(version: 20140919160642) do
   end
 
   create_table "specials", force: true do |t|
-    t.string "sunday"
-    t.string "monday"
-    t.string "tuesday"
-    t.string "wednesday"
-    t.string "thursday"
-    t.string "friday"
-    t.string "saturday"
-    t.time   "starts_at"
-    t.time   "ends_at"
+    t.string  "sunday"
+    t.string  "monday"
+    t.string  "tuesday"
+    t.string  "wednesday"
+    t.string  "thursday"
+    t.string  "friday"
+    t.string  "saturday"
+    t.time    "starts_at"
+    t.time    "ends_at"
+    t.integer "location_id"
   end
 
   create_table "users", force: true do |t|
