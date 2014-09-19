@@ -8,18 +8,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(username: params[:user][:username],
-                    password: params[:user][:password],
-                    email: params[:user][:email])
+    @user = User.new(allowed_parameters)
 
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Thanks for registering, #{@user.username}"
       redirect_to root_path
     else
-      flash[:error] = "Uh oh.... There was an issue."
       render :new
     end
+  end
+
+  private
+  def allowed_parameters
+    params.require(:user).permit(:username, :email, :password)
   end
 
 end
