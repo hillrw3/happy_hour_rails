@@ -50,3 +50,6 @@ gem "rails_12factor", group: :production
 gem "bourbon"
 gem 'neat'
 gem 'bitters'
+
+gem 'pry-rails', group: [:test, :development]
+gem "pry-byebug", group: [:test, :development]

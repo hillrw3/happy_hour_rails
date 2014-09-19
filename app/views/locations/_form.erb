@@ -17,6 +17,24 @@
     <%= f.text_field :address %>
     <%= f.label :website %>
     <%= f.text_field :website %>
+    <p class="box centered-text">Happy Hour Specials</p>
+    <br/>
+    <%= f.fields_for :special do |form| %>
+      <%= form.label :sunday %>
+      <%= form.text_area :sunday %>
+      <%= form.label :monday %>
+      <%= form.text_area :monday %>
+      <%= form.label :tuesday %>
+      <%= form.text_area :tuesday %>
+      <%= form.label :wednesday %>
+      <%= form.text_area :wednesday %>
+      <%= form.label :thursday %>
+      <%= form.text_area :thursday %>
+      <%= form.label :friday %>
+      <%= form.text_area :friday %>
+      <%= form.label :saturday %>
+      <%= form.text_area :saturday %>
+    <% end %>
     <br>
     <%= f.submit %>
 
