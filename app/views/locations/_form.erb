@@ -7,7 +7,7 @@
   </div>
 <% end %>
 <div class="opaque-box">
-  <%= form_for @location, url: locations_path do |f| %>
+  <%= form_for @location do |f| %>
 
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -15,8 +15,8 @@
     <%= f.text_field :phone %>
     <%= f.label :address %>
     <%= f.text_field :address %>
-    <%= f.label :description, "Happy Hour Info" %>
-    <%= f.text_area :description %>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
     <br>
     <%= f.submit %>
 

@@ -2,19 +2,4 @@
 
 <div class='errors flash'><%= flash[:error] if flash[:error] %></div>
 
-<div class="opaque-box">
-  <%= form_for User.new do |f| %>
-
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <br>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br>
-    <%= f.submit "Register!" %>
-
-  <% end %>
-</div>
+<%= render partial: "form" %>

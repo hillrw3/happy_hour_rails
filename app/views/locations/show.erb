@@ -4,5 +4,5 @@
 <h6><%= @location.address %></h6>
   <br/>
 <p><%= @location.description %></p>
-  <%= link_to "Edit #{@location.name}", edit_location_path(id: @location.id) %>
+  <%= link_to "Edit #{@location.name}", edit_location_path(@location) %>
 </div>

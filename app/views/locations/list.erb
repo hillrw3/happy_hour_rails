@@ -3,7 +3,7 @@
 <ul class="centered-text">
   <br/>
   <% @locations.each do |location| %>
-    <li><%= link_to location.name, location_path(id: location.id) %></li>
+    <li><%= link_to location.name, location_path(location) %></li>
     <br/>
   <% end %>
 </ul>

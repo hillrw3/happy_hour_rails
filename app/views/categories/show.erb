@@ -1,10 +1,10 @@
 <br/>
 <div class="box">
-<h2>So you're looking for some <%= @category.category.downcase %>?</h2>
+<h2>So you're looking for some <%= @category.name.downcase %>?</h2>
 
   <ul>
     <% @category.locations.each do |location| %>
-      <li><%= link_to location.name, location_path(id: location.id) %></li>
+      <li><%= link_to location.name, location_path(location) %></li>
     <% end %>
   </ul>
 </div>

@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+File.open("#{Rails.root}/lib/assets/yelp_data.csv") do |locations|
+  locations.read.each_line do |location|
+    name, phone, address, latitude, longitude = location.chomp.split(',')
+    Location.create!(name: name, phone: phone, address: address, latitude: latitude, longitude: longitude)
+  end
+end
+
+Location.first.destroy

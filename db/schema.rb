@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911140819) do
+ActiveRecord::Schema.define(version: 20140919160642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
-    t.string "category"
+    t.string "name"
   end
 
   create_table "location_categories", force: true do |t|
@@ -26,18 +26,35 @@ ActiveRecord::Schema.define(version: 20140911140819) do
   end
 
   create_table "locations", force: true do |t|
-    t.string "name"
-    t.string "phone"
-    t.string "address"
-    t.string "latitude",    limit: nil
-    t.float  "longitude"
-    t.string "description"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "website"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "specials", force: true do |t|
+    t.string "sunday"
+    t.string "monday"
+    t.string "tuesday"
+    t.string "wednesday"
+    t.string "thursday"
+    t.string "friday"
+    t.string "saturday"
+    t.time   "starts_at"
+    t.time   "ends_at"
   end
 
   create_table "users", force: true do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "admin",           default: false
   end
 
 end

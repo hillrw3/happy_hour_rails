@@ -8,21 +8,4 @@
   </div>
 <% end %>
 
-<div class="opaque-box">
-
-  <%= form_for @location, url: location_path(id: @location.id) do |f| %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-    <%= f.label :description, "Happy Hour Info" %>
-    <%= f.text_area :description %>
-    <br>
-    <%= f.submit %>
-
-  <% end %>
-
-</div>
+<%= render partial: "form" %>

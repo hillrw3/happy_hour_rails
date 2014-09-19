@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
                                :token_secret    => '0P4Q5MUWLRK85lGm0CneI5K01pg')
   end
 
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+
 end
