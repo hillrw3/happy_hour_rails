@@ -18,26 +18,20 @@ class LocationsController < ApplicationController
   end
 
   def create
-    if params[:location][:address] == ''
-      @location = Location.new
-      @location.errors.add(:address, "can't be blank")
-      render :new
+    @location = Location.new(allowed_parameters)
+    geocodes = geocode_address(@location.address)
+    @location.latitude = geocodes["lat"].to_f
+    @location.longitude = geocodes["lng"].to_f
+    if @location.save
+      flash[:notice] = "Location successfully added!"
+      redirect_to root_path
     else
-      @location = Location.new(allowed_parameters)
-      geocodes = geocode_address(@location.address)
-      @location.latitude = geocodes["lat"].to_f
-      @location.longitude = geocodes["lng"].to_f
-      if @location.save
-        flash[:notice] = "Location successfully added!"
-        redirect_to root_path
-      else
-        render :new
-      end
+      render :new
     end
   end
 
   def edit
-    @location = Location.find_by(:id => params[:id])
+    @location = Location.find(params[:id])
   end
 
   def update
