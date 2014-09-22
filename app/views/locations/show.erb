@@ -5,7 +5,29 @@
   <br/>
 
   <p><%= @location.website %></p>
+
   <p><%= @location.phone %></p>
+
+  <% unless @location.special == nil %>
+    <h4>Specials</h4>
+    <dl>
+      <dt>Sunday</dt>
+      <dd><%= @location.special.sunday %></dd>
+      <dt>Monday</dt>
+      <dd><%= @location.special.monday %></dd>
+      <dt>Tuesday</dt>
+      <dd><%= @location.special.tuesday %></dd>
+      <dt>Wednesday</dt>
+      <dd><%= @location.special.wednesday %></dd>
+      <dt>Thursday</dt>
+      <dd><%= @location.special.thursday %></dd>
+      <dt>Friday</dt>
+      <dd><%= @location.special.friday %></dd>
+      <dt>Saturday</dt>
+      <dd><%= @location.special.saturday %></dd>
+    </dl>
+  <% end %>
+
   <% if session[:user_id] %>
     <%= link_to "Edit #{@location.name}", edit_location_path(@location) %>
   <% end %>

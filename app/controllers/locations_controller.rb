@@ -37,14 +37,15 @@ class LocationsController < ApplicationController
   end
 
   def edit
-    @location = Location.find(params[:id])
+    @location = Location.find_by(:id => params[:id])
   end
 
   def update
     @location = Location.find(params[:id])
-    @location.update(name: params[:location][:name],
-    )
-    @special = @location.special.update(params[:location][:special])
+    @location.update_attributes(allowed_parameters)
+    geocodes = geocode_address(@location.address)
+    @location.latitude = geocodes["lat"].to_f
+    @location.longitude = geocodes["lng"].to_f
     flash[:notice] = "#{@location.name} was successfully updated!"
     redirect_to location_path(@location)
   end
@@ -65,7 +66,7 @@ class LocationsController < ApplicationController
   end
 
   def allowed_parameters
-    params.require(:location).permit(:name, :address, :phone, :website, special_attributes: [:id, :sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday])
+    params.require(:location).permit(:name, :address, :phone, :website, special_attributes: [:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday])
   end
 
 
