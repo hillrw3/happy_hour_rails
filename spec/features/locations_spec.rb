@@ -26,7 +26,7 @@ feature "Locations" do
     expect(page).to have_content "Pub on Penn"
     click_on "Pub on Penn"
     expect(page).to have_content "123 Fun St"
-    click_on "Edit Pub on Penn"
+    click_on "Edit"
     fill_in "Address", with: "456 Great Ave"
     click_on "Update Location"
     expect(page).to have_content "456 Great Ave"

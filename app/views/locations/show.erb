@@ -1,12 +1,15 @@
 <br/>
 <div class="box">
+  <div class="title-with-button">
   <h2><%= @location.name %></h2>
+  <% if session[:user_id] %>
+    <%= link_to "Edit", edit_location_path(@location) %>
+  <% end %>
+</div>
   <h6><%= @location.address %></h6>
   <br/>
-
-  <p><%= @location.website %></p>
-
   <p><%= @location.phone %></p>
+  <p><%= @location.website %></p>
 
   <% unless @location.special == nil %>
     <h4>Specials</h4>
@@ -27,9 +30,5 @@
       <dd><%= @location.special.saturday %></dd>
     </dl>
   <% end %>
-
-  <% if session[:user_id] %>
-    <%= link_to "Edit #{@location.name}", edit_location_path(@location) %>
-  <% end %>
-  <br/><br/>v
+  <br/><br/>
 </div>

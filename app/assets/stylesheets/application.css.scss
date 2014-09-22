@@ -6,7 +6,7 @@
 @import 'neat';
 @import 'base/base';
 
-$opaque-gray: rgba(168, 173,179,0.7);
+$opaque-gray: rgba(168, 173, 179, 0.7);
 
 body {
   background: (url('http://images.fineartamerica.com/images-medium-large/mile-high-skyline-kevin-munro.jpg'));
@@ -19,11 +19,11 @@ body {
     margin: auto;
   }
 
-
-  #map { position:absolute;
-    height:80%;
-    width:50%;
-    margin:auto;
+  #map {
+    position: absolute;
+    height: 80%;
+    width: 50%;
+    margin: auto;
   }
 
   .title {
@@ -72,9 +72,13 @@ body {
     margin: 0;
   }
 
-  #red {color: red;}
+  #red {
+    color: red;
+  }
 
-  #green {color: limegreen;}
+  #green {
+    color: limegreen;
+  }
 
   a:link, a:visited {
     display: inline;
@@ -157,10 +161,25 @@ form label {
 }
 
 li a {
-  &:hover { padding: 3%;}
+  &:hover {
+    padding: 3%;
+  }
 }
 
 .centered-text {
   text-align: center;
 }
 
+.title-with-button {
+  * {
+    display: inline-block;
+  }
+  a {
+    float: right;
+  }
+}
+
+dl * {
+  margin: 0px;
+  padding: 0px;
+}
