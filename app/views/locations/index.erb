@@ -30,9 +30,10 @@
       properties: {
         title: "<%= location.name %>",
         description: "<%= find_day(location)%>",
-        'marker-size': 'medium',
-        'marker-color': '#4682b4',
-        'marker-symbol': 'bar'
+//        'marker-size': 'medium',
+//        'marker-color': '#4682b4',
+//        'marker-symbol': 'bar'
+          <%= specials_status(location).html_safe %>
       }
     }).addTo(map);
     <% end %>
