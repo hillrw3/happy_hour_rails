@@ -7,5 +7,4 @@ class Location < ActiveRecord::Base
   has_many :location_categories
   has_many :categories, through: :location_categories
 
-
 end

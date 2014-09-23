@@ -52,16 +52,8 @@ class LocationsController < ApplicationController
     JSON.parse(results)[0]["data"]["geometry"]["location"]
   end
 
-  def location_present?
-    if params[:location][:address] == ''
-      @location.errors.add(:address, "can't be blank")
-      render :new
-    end
-  end
-
   def allowed_parameters
-    params.require(:location).permit(:name, :address, :phone, :website, special_attributes: [:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday])
+    params.require(:location).permit(:name, :address, :phone, :website, special_attributes: [:starts_at, :ends_at, :sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday])
   end
-
 
 end

@@ -7,13 +7,12 @@
   <% end %>
 </div>
   <h6><%= @location.address %></h6>
-  <br/>
   <p><%= @location.phone %></p>
   <p><%= @location.website %></p>
 
-  <% unless @location.special == nil %>
-    <h4>Specials</h4>
+    <h5>Happy Hour Specials</h5>
     <dl>
+      <dt><%= "From #{@location.special.starts_at.strftime('%I:%M:%S %p')} to #{@location.special.ends_at.strftime('%I:%M:%S %p')}" unless @location.special.starts_at == nil || @location.special.ends_at == nil %></dt>
       <dt>Sunday</dt>
       <dd><%= @location.special.sunday %></dd>
       <dt>Monday</dt>
@@ -29,6 +28,5 @@
       <dt>Saturday</dt>
       <dd><%= @location.special.saturday %></dd>
     </dl>
-  <% end %>
   <br/><br/>
 </div>
