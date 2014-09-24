@@ -24,13 +24,12 @@ module ApplicationHelper
     unless record.special.starts_at == nil && record.special.ends_at == nil
       time_now = Time.parse("2000-01-01 #{Time.now.strftime('%H:%M:%S')} UTC")
       starts_at = record.special.starts_at.utc
-      # binding.pry
       specials_range = starts_at..record.special.ends_at.utc
         if specials_range.cover?(time_now)
           "'marker-size': 'medium',
           'marker-color': '#4682b4',
           'marker-symbol': 'bar'"
-        elsif (starts_at - 1) === time_now
+        elsif (starts_at - (60 * 60)..starts_at).cover?(time_now)
           "'marker-size': 'medium',
           'marker-color': '#E6E612',
           'marker-symbol': 'bar'"
