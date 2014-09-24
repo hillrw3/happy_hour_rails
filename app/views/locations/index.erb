@@ -1,4 +1,3 @@
-
 <% if session[:user_id] == nil %>
   <div id="to_register">
     <%= link_to "Not a member? Register here!", new_user_path, id: 'register_link' %>
@@ -30,10 +29,7 @@
       properties: {
         title: "<%= location.name %>",
         description: "<%= find_day(location)%>",
-//        'marker-size': 'medium',
-//        'marker-color': '#4682b4',
-//        'marker-symbol': 'bar'
-          <%= specials_status(location).html_safe %>
+        <%= specials_status(location).html_safe %>
       }
     }).addTo(map);
     <% end %>
