@@ -37,6 +37,7 @@ class LocationsController < ApplicationController
   def update
     @location = Location.find(params[:id])
     @location.update_attributes(allowed_parameters)
+    # binding.pry
     geocodes = geocode_address(@location.address)
     @location.latitude = geocodes["lat"].to_f
     @location.longitude = geocodes["lng"].to_f
@@ -48,6 +49,7 @@ class LocationsController < ApplicationController
   private
 
   def geocode_address (address)
+    sleep(0.11)
     results = Geocoder.search(address).to_json
     JSON.parse(results)[0]["data"]["geometry"]["location"]
   end
