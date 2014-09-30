@@ -1,8 +1,12 @@
 module ApplicationHelper
 
+  def todays_specials
+
+  end
+
   def find_day(record)
     day_of_week = Date.today.strftime('%A')
-    case day_of_week
+    @_day ||= case day_of_week
       when "Sunday"
         record.special.sunday ? record.special.sunday : "Add something!"
       when "Monday"

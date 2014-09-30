@@ -4,14 +4,14 @@ require 'capybara/rails'
 feature "Locations" do
 
   scenario "User can see list of all locations" do
-    create_location
+    create_location_with_category_and_specials
     visit '/'
     click_on "All locations"
     expect(page).to have_content "Pub on Penn"
   end
 
   scenario "user can click on location and see that locations info" do
-    create_location
+    create_location_with_category_and_specials
     visit '/'
     click_on "All locations"
     expect(page).to have_content "Pub on Penn"
@@ -20,7 +20,7 @@ feature "Locations" do
   end
 
   scenario "As a signed in user, I can edit a location" do
-    create_location
+    create_location_with_category_and_specials
     login
     click_on "All locations"
     expect(page).to have_content "Pub on Penn"
@@ -33,7 +33,7 @@ feature "Locations" do
   end
 
   scenario "As an anonymous user, I cannot edit a location" do
-    create_location
+    create_location_with_category_and_specials
     visit '/'
     click_on "All locations"
     expect(page).to have_content "Pub on Penn"

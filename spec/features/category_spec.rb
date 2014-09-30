@@ -4,9 +4,7 @@ require 'capybara/rails'
 feature 'Categories' do
 
   scenario 'User can view categories and click category to view corresponding locations' do
-    create_category
-    create_location
-    create_location_category
+    create_location_with_category_and_specials
     login
     click_on 'Categories'
     expect(page).to have_content "Trivia"
